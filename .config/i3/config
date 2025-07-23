@@ -1,0 +1,16 @@
+# vi: ft=conf
+
+font pango:CaskaydiaMono Nerd Font 15
+
+popup_during_fullscreen smart
+
+include config.d/keybind.conf
+include config.d/assign.conf
+include config.d/background.conf
+include config.d/bar.conf
+include config.d/border.conf
+include config.d/color.conf
+include config.d/exec.conf
+include config.d/keyboard.conf
+include config.d/lock.conf
+include config.d/touchpad.conf
