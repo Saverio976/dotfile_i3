@@ -49,3 +49,5 @@ if [[ "$USER_GROUP" != "" ]]; then
     chown -R "$USER_GROUP" "$HOME/.local/share/wallpaper"
     chown -R "$USER_GROUP" "$HOME/.local/share/fonts"
 fi
+
+fc-cache -f -v
