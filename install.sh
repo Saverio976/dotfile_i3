@@ -50,5 +50,5 @@ if [[ "$USER_GROUP" != "" ]]; then
     chown -R "$USER_GROUP" "$HOME/.local/share/fonts"
 fi
 
-if [ $commands[fc-cache] ] \
+[ $commands[fc-cache] ] \
     && fc-cache -f -v
