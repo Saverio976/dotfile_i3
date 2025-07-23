@@ -1,0 +1,82 @@
+/*
+ * ROFI color theme
+ *
+ * Based garuda linux i3
+ */
+
+configuration {
+  display-run: "r:";
+  display-drun: "dr:";
+  display-window: "w:";
+  display-ssh: "ssh:";
+  display-combi: "combi:";
+  display-keys: "keys:";
+  display-filebrowser: "file:";
+  drun-display-format: "{icon} {name}";
+  font: "Monocraft 16";
+  modi: "window,run,drun";
+  combi-modi: "window,drun,run";
+  show-icons: true;
+}
+
+* {
+  bg: #282a36;
+  bg-alt: #44475a;
+
+  fg: #f8f8f2;
+
+  blue: #6272a4;
+  purple: #bd93f9;
+
+  background-color: @bg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+element {
+  padding: 12;
+  text-color: @blue;
+}
+
+element selected {
+  text-color: @purple;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+entry {
+  background-color: @blue;
+  padding: 12 0 12 3;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @blue;
+  enabled: true;
+  font: "Monocraft 12";
+  padding: 12 0 0 12;
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+}
