@@ -13,7 +13,8 @@ else
 fi
 
 mkdir -p "$XDG_CONFIG_HOME"
-mkdir -p "$XDG_DATA_HOME"
+mkdir -p "$HOME/.local/share"
+mkdir -p "$HOME/Pictures"
 
 if [[ -d "$XDG_CONFIG_HOME/i3" ]]; then
     echo "FAILED !! ERROR !! $XDG_CONFIG_HOME/i3 exists..."
@@ -36,11 +37,12 @@ if [[ -d "$HOME/.local/share/fonts" ]]; then
     exit 2
 fi
 
-ln -sf   "$SRC/.config/i3"              "$XDG_CONFIG_HOME/i3"
-ln -sf   "$SRC/.config/rofi"            "$XDG_CONFIG_HOME/rofi"
-ln -sf   "$SRC/.config/fontconfig"      "$XDG_CONFIG_HOME/fontconfig"
-ln -sf   "$SRC/.local/share/wallpaper"  "$HOME/.local/share/wallpaper"
-ln -sf   "$SRC/.local/share/fonts"      "$HOME/.local/share/fonts"
+ln -sf   "$SRC/.config/i3"                 "$XDG_CONFIG_HOME/i3"
+ln -sf   "$SRC/.config/rofi"               "$XDG_CONFIG_HOME/rofi"
+ln -sf   "$SRC/.config/fontconfig"         "$XDG_CONFIG_HOME/fontconfig"
+ln -sf   "$SRC/.local/share/wallpaper"     "$HOME/.local/share/wallpaper"
+ln -sf   "$SRC/.local/share/fonts"         "$HOME/.local/share/fonts"
+ln -sf   "$SRC/Pictures/dragonshine.png"   "$HOME/Pictures/dragonshine.png"
 
 if [[ "$USER_GROUP" != "" ]]; then
     chown -R "$USER_GROUP" "$XDG_CONFIG_HOME/i3"
@@ -48,6 +50,7 @@ if [[ "$USER_GROUP" != "" ]]; then
     chown -R "$USER_GROUP" "$XDG_CONFIG_HOME/fontconfig"
     chown -R "$USER_GROUP" "$HOME/.local/share/wallpaper"
     chown -R "$USER_GROUP" "$HOME/.local/share/fonts"
+    chown -R "$USER_GROUP" "$SRC"
 fi
 
 if [ $commands[fc-cache] ]; then
